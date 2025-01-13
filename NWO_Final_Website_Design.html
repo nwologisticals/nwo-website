@@ -1,0 +1,344 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NWO Meme Coin</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Monoton&family=Poppins:wght@400;600&family=Orbitron:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Orbitron', sans-serif;
+            background: radial-gradient(circle, rgba(72,0,112,0.8), rgba(25,25,25,1), black);
+            color: white;
+            text-align: center;
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #000000, #6a0dad, #ffffff);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px 20px;
+            margin: 0 10px;
+            background: linear-gradient(135deg, #000, #6a0dad, #fff);
+            background-size: 200%;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s, background-position 0.5s;
+        }
+
+        header a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+            background-position: right;
+        }
+
+        .hero {
+            position: relative;
+            padding: 100px 20px;
+            background: url('588793f3-5a7e-49e8-a66d-cd268f85a32c.webp') no-repeat center center/cover;
+        }
+
+        .hero h1 {
+            font-family: 'Monoton', cursive;
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .hero p {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+
+        .about {
+            padding: 50px 20px;
+        }
+
+        .about h2 {
+            font-family: 'Monoton', cursive;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2em;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .story {
+            padding: 50px 20px;
+        }
+
+        .story h2 {
+            font-family: 'Monoton', cursive;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .story p {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2em;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .tokenomics {
+            padding: 50px 20px;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .tokenomics h2 {
+            font-family: 'Monoton', cursive;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #8e2de2;
+            width: 100%;
+        }
+
+        .tokenomics .bubble {
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+            background: linear-gradient(135deg, #000, #8e2de2, #fff);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            text-align: center;
+        }
+
+        .roadmap {
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #0a0a0a, #1f0136);
+        }
+
+        .roadmap h2 {
+            font-family: 'Monoton', cursive;
+            font-size: 2.8em;
+            margin-bottom: 30px;
+            color: #e0b3ff;
+            text-shadow: 0px 0px 10px #8e2de2;
+        }
+
+        .roadmap .step {
+            margin: 30px auto;
+            max-width: 800px;
+            padding: 30px;
+            background: rgba(50, 0, 90, 0.85);
+            color: #ffffff;
+            border-radius: 20px;
+            border: 2px solid #8e2de2;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .roadmap .step::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, transparent, rgba(142, 45, 226, 0.1), rgba(142, 45, 226, 0.3));
+            animation: spin 6s linear infinite;
+            z-index: 0;
+        }
+
+        .roadmap .step h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #fff;
+            text-shadow: 0px 0px 8px #8e2de2;
+            position: relative;
+            z-index: 1;
+        }
+
+        .roadmap .step p {
+            font-size: 1.3em;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .final-footer {
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #1f0136, #12021c);
+            color: #fff;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-footer::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(142, 45, 226, 0.2), rgba(72, 0, 112, 0));
+            animation: spin 8s linear infinite;
+            z-index: 0;
+        }
+
+        .final-footer h2 {
+            font-family: 'Monoton', cursive;
+            font-size: 2.5em;
+            margin: 0;
+            color: #e0b3ff;
+            text-shadow: 0 0 8px #8e2de2;
+            position: relative;
+            z-index: 1;
+        }
+
+        .final-footer p {
+            font-size: 1.2em;
+            margin: 10px 0 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .final-footer .disclaimer {
+            font-size: 0.9em;
+            margin-top: 20px;
+            color: #ccc;
+            position: relative;
+            z-index: 1;
+        }
+
+        footer {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: #8e2de2;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="https://www.tiktok.com/@official_nwo" target="_blank">TikTok</a>
+        <a href="https://www.instagram.com/newworldorder.token" target="_blank">Instagram</a>
+        <a href="https://t.co/ABiZFa6AVO" target="_blank">Telegram</a>
+        <a href="https://x.com/NWOplug" target="_blank">X</a>
+    </header>
+
+    <div class="hero">
+        <h1>NWO Meme Coin</h1>
+        <p>The New World Order of Memecoins has arrived.</p>
+    </div>
+
+    <section class="about">
+        <h2>About NWO</h2>
+        <p>
+            NWO isn’t just a memecoin—it’s a movement. Combining futuristic technology, bold design, and a community-driven approach,
+            NWO is redefining the crypto landscape. With every transaction, we’re building an ecosystem where innovation meets culture.
+        </p>
+    </section>
+
+    <section class="story">
+        <h2>Our Story</h2>
+        <p>
+            In the digital depths of a decentralized world, NWO was born to challenge the norms. What began as a vision among a group of 
+            tech enthusiasts quickly grew into a revolutionary movement. They envisioned a coin that would merge the power of blockchain 
+            technology with the vibrant culture of memes, empowering a global community to shape the future of finance and creativity.
+        </p>
+        <p>
+            The journey wasn’t easy. Faced with skepticism and resistance, the creators of NWO relied on innovation, resilience, and an 
+            unshakable belief in their vision. They built a platform that celebrates inclusivity, creativity, and forward-thinking, 
+            creating an ecosystem where every user can contribute to the New World Order.
+        </p>
+        <p>
+            Today, NWO stands as a testament to the power of dreams fueled by technology and community. Together, we’re not just 
+            imagining the future—we’re building it.
+        </p>
+    </section>
+
+    <section class="tokenomics">
+        <h2>Tokenomics</h2>
+        <div class="bubble">1B Tokens</div>
+        <div class="bubble">100% Liquidity Burned</div>
+        <div class="bubble">0% Tax</div>
+        <div class="bubble" style="width: 400px; height: 400px; font-size: 1em; line-height: 1.5;">
+            Adhering to the ethos of decentralization, NWO adopted a strategy to ensure genuine community ownership and nurture growth 
+            with steadfast support from the community.
+        </div>
+    </section>
+
+    <section class="roadmap">
+        <h2>Roadmap</h2>
+        <div class="step">
+            <h3>Phase 1: Foundation</h3>
+            <p>
+                Launch of NWO Meme Coin with 100% liquidity burned. Community-building efforts to establish a strong and united base.
+            </p>
+        </div>
+        <div class="step">
+            <h3>Phase 2: Expansion</h3>
+            <p>
+                Strategic listings on top decentralized platforms. Development of partnerships and integrations with meme-centric projects.
+            </p>
+        </div>
+        <div class="step">
+            <h3>Phase 3: Innovation</h3>
+            <p>
+                Launch of the NWO ecosystem, including community-driven DAO features. Expansion into NFT projects and metaverse utilities.
+            </p>
+        </div>
+    </section>
+
+    <section class="final-footer">
+        <h2>JOIN THE NWO REVOLUTION</h2>
+        <p>
+            This is not just a memecoin—it’s a movement. The New World Order of crypto has arrived.
+        </p>
+        <p class="disclaimer">
+            Disclaimer: This token is for entertainment purposes only and holds no intrinsic financial value. Please invest responsibly, 
+            as all investments carry risks of value fluctuation.
+        </p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 NWO. All rights reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+</body>
+</html>
